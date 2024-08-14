@@ -1,0 +1,24 @@
+
+server:
+  port: 8087
+
+#Datasource Configuration
+spring:
+  datasource:
+    hikari:
+      maximum-pool-size: 4
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/oseulsaja
+    username: sagong
+    password: e2e2e2
+  sql:
+    init:
+      platform: postgres
+
+# Mybatis 설정
+mybatis:
+  # resources/mapper/ 에 있는 모든 xml 파일
+  mapper-locations: mapper/*.xml
+  # column name to camel case - 반환 받는 컬럼명을 CamelCase로 받는 설정을 합니다.
+  configuration:
+    map-underscore-to-camel-case: true
